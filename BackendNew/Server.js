@@ -33,6 +33,10 @@ app.use('/api/chat', chatRouter);
 app.use('/api/message', messageRouter);
 app.use('/api/users', userRoute);
 
-app.listen(PORT, () => { 
-    console.log(`the app is running on server : ${PORT}`);
-});
+export default app;
+
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => { 
+        console.log(`the app is running on server : ${PORT}`);
+    });
+}
